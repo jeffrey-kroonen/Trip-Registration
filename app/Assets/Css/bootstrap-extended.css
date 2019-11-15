@@ -1,0 +1,42 @@
+/** Border */
+.border-bottom-danger {
+  border-bottom: 1px solid #dc3545 !important;
+}
+
+/** Text color */
+.text-danger-light {
+  color: #ffccd1;
+}
+
+.text-danger-light:hover {
+  cursor: pointer;
+  color: #dc3545;
+}
+
+/** Pagination */
+.page-item > .page-link {
+  color: #dc3545 !important;
+}
+
+.page-item >.page-link:focus, .page-link:active {
+  box-shadow: none !important;
+}
+
+.page-item.active > .page-link {
+  border: 1px solid #dc3545;
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+.page-item.disabled > .page-link {
+  color: grey !important;
+}
+
+/** Nav tabs */
+.nav-item > .nav-link {
+  color: #dc3545 !important;
+}
+
+.nav-item > .nav-link.active {
+  color: #495057 !important;
+}

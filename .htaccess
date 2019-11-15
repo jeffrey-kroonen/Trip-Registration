@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^tripregistration-jkroonen559335.codeanyapp.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^tripregistration-jkroonen559335.codeanyapp.com$
+RewriteCond %{REQUEST_URI} !app/
+RewriteRule (.*) /app/$1 [L]

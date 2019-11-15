@@ -1,0 +1,7 @@
+.msg {
+  display: none;
+}
+
+.c-pointer:hover {
+  cursor: pointer;
+}
