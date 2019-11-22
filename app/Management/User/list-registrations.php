@@ -61,7 +61,12 @@
                 </table>
               </div>
             
+              <div class="d-flex justify-content-between align-items-center">
               <?= $pagination->getLinks(); ?>
+            
+              
+                <a href="/Handlers/Registration/export.php?id=<?= $user->id; ?>" class="btn btn-success btn-sm"><i class="fas fa-file-excel"></i> Exporteren</a>
+              </div>
             
           </div>
         </div>

@@ -1,7 +1,7 @@
 <?php
 
   $localdb = [
-    "host" => "",
+    "host" => "localhost",
     "database" => "",
     "username" => "",
     "password" => ""

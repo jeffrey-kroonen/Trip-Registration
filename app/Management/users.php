@@ -30,10 +30,11 @@
         ?>
           <tr>
             <th>
-              <a href="/Management/User/?id=<?= $user->id; ?>" class="text-muted <?= ($_SESSION["user_id"] != $user->id) ? 'mr-3' : ''; ?>"><i class="fas fa-ellipsis-v"></i></a>
+              <a href="/Management/User/?id=<?= $user->id; ?>" class="text-muted mr-3"><i class="fas fa-ellipsis-v"></i></a>
               <?php if ($_SESSION["user_id"] != $user->id) { ?>
-              <a href="#" data-id="<?= $user->id; ?>" class="text-muted delete-user-trigger"><i class="fas fa-trash"></i></a>
+              <a href="#" data-id="<?= $user->id; ?>" class="text-muted delete-user-trigger mr-3"><i class="fas fa-trash"></i></a>
               <?php } ?>
+              <a href="/Handlers/Registration/export.php?id=<?= $user->id; ?>" class="text-success" title="Exporteer registraties naar csv"><i class="fas fa-file-excel"></i></a>
             </th>
             <td><?= $user->name; ?></td>
             <td><?= $user->role; ?></td>

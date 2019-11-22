@@ -52,18 +52,19 @@
     public function getLinks() : string
     { 
       if ($this->currentPage > $this->totalPages) return "";
+
       $this->links = "<nav aria-label=''>";
       $this->links .= "<ul class='pagination'>";
       
       /** Previous button */
       $disabled = ($this->currentPage == 1 || $this->currentPage > $this->totalPages) ? "disabled" : "";
-      $color = (empty($disabled)) ? "text-danger" : "";
+      $color = (empty($disabled)) ? "text-eco" : "";
       $link = ($this->currentPage > 1) ? $this->url."p=".($this->currentPage - 1) : "";
       $this->links .= "<li class='page-item ".$disabled."'><a class='page-link ".$color."' href='".$link."' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
       
       /** First button */
       $active = ($this->currentPage == 1) ? "active" : "";
-      $link = (($this->currentPage > 1) && (($this->currentPage < $this->totalPages) || $this->totalPages < 3)) ? $this->url."p=".($this->currentPage - 1) : (($this->currentPage == $this->totalPages) ? $this->url."p=".($this->currentPage - 2) : "#");
+      $link = (($this->currentPage > 1) && (($this->currentPage < $this->totalPages) || $this->totalPages < 3)) ? $this->url."p=".($this->currentPage - 1) : (($this->currentPage == $this->totalPages && $this->currentPage > 1) ? $this->url."p=".($this->currentPage - 2) : "#");
       $number = (($this->currentPage > 1) && (($this->currentPage < $this->totalPages) || $this->totalPages < 3)) ? ($this->currentPage - 1) : ((($this->currentPage == $this->totalPages) && ($this->totalPages > 1)) ? ($this->currentPage - 2) : $this->currentPage);
       $this->links .= "<li class='page-item ".$active."'><a class='page-link' href='".$link."'>".$number."</a></li>";
       
@@ -85,7 +86,7 @@
         
       /** Next button */
       $disabled = ($this->currentPage == $this->totalPages || $this->currentPage > $this->totalPages) ? "disabled" : "";
-      $color = (empty($disabled)) ? "text-danger" : "";
+      $color = (empty($disabled)) ? "text-eco" : "";
       $link = ($this->currentPage < $this->totalPages) ? $this->url."p=".($this->currentPage + 1) : "";
       $this->links .= "<li class='page-item ".$disabled."'><a class='page-link ".$color."' href='".$link."' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li";
       
